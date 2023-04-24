@@ -7,7 +7,7 @@ public class Main {
 
         workingWithData.creatingEmployeeData("Иванов Л.В.", 120645, 2);
         workingWithData.creatingEmployeeData("Петров П.Р.", 127049, 1);
-        workingWithData.creatingEmployeeData("Андреев С.Н", 120969, 3);
+        workingWithData.creatingEmployeeData("Андреев С.Н.", 120969, 3);
         workingWithData.creatingEmployeeData("Васильев И.П.", 120949, 4);
         workingWithData.creatingEmployeeData("Андреев И.С.", 120899, 5);
         workingWithData.creatingEmployeeData("Владимиров Д.К.", 134099, 1);

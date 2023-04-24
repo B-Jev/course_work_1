@@ -5,8 +5,8 @@ public class Employee {
     private String fullName;
     private long salary;
     private int departmentNumber;
-    static int employeeNumber;
     static int id;
+    static int counterId = 0;
     static long amountOfSalaries = 0;
     static double averageMonthlySalary = 0;
 
@@ -15,10 +15,16 @@ public class Employee {
         this.salary = salary;
         this.departmentNumber = departmentNumber;
         this.fullName = fulName;
+        id = counterId;
+        counterId++;
     }
 
     public String getFulName() {
         return fullName;
+    }
+
+    public static int getId() {
+        return id;
     }
 
     public int getDepartmentNumber() {
@@ -27,6 +33,10 @@ public class Employee {
 
     public long getSalary() {
         return salary;
+    }
+
+    public static void setId(int id) {
+        Employee.id = id;
     }
 
     public void setDepartmentNumber(int departmentNumber) {
@@ -42,7 +52,7 @@ public class Employee {
     }
 
     public String toString() {
-        return "id - " + employeeNumber + ". Ф.И.О - " + this.fullName + ". Зарплата - " + this.salary + ". Отдел нр. - " + this.departmentNumber;
+        return "id - " + id + ". Ф.И.О - " + this.fullName + ". Зарплата - " + this.salary + ". Отдел нр. - " + this.departmentNumber;
     }
 
 }

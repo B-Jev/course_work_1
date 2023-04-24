@@ -9,36 +9,34 @@ public class WorkingWithData {
 
     public void creatingEmployeeData(String thisFullName, long thisSalary, int thisDepartmentNumber) {
         Employee newEmployee = new Employee(thisFullName, thisSalary, thisDepartmentNumber);
-        employees[Employee.id++] = newEmployee;
+        employees[Employee.getId()] = newEmployee;
     }
 
     public void printAllEmployee() {
-        for (int i = 0; i < Employee.id; i++) {
-            Employee employee = employees[i];
-            Employee.employeeNumber = i + 1;
-            System.out.println(employee);
+        for (Employee e : employees) {
+            System.out.println(e);
         }
     }
 
     public void amountOfSalaries() {
-        for (int i = 0; i < Employee.id; i++) {
-            Employee.amountOfSalaries += employees[i].getSalary();
+        for (Employee e : employees) {
+            Employee.amountOfSalaries += e.getSalary();
         }
         System.out.println("Сумма зарплат - " + Employee.amountOfSalaries);
     }
 
     public void averageMonthlySalary() {
-        for (int i = 0; i < Employee.id; i++) {
-            Employee.averageMonthlySalary += employees[i].getSalary();
+        for (Employee e : employees) {
+            Employee.averageMonthlySalary += e.getSalary();
         }
-        System.out.println("Средняя зарплата - " + Employee.averageMonthlySalary / Employee.id);
+        System.out.println("Средняя зарплата - " + Employee.averageMonthlySalary / Employee.getId());
     }
 
     public void minMonthlySalaryaries() {
         long minMonthlySalaryaries = employees[0].getSalary();
-        for (int i = 0; i < Employee.id; i++) {
-            if (minMonthlySalaryaries > employees[i].getSalary()) {
-                minMonthlySalaryaries = employees[i].getSalary();
+        for (Employee e : employees) {
+            if (minMonthlySalaryaries > e.getSalary()) {
+                minMonthlySalaryaries = e.getSalary();
             }
         }
         System.out.println("Минимальная зарплата - " + minMonthlySalaryaries);
@@ -46,9 +44,9 @@ public class WorkingWithData {
 
     public void maxMonthlySalaryaries() {
         long maxMonthlySalaryaries = employees[0].getSalary();
-        for (int i = 0; i < Employee.id; i++) {
-            if (maxMonthlySalaryaries < employees[i].getSalary()) {
-                maxMonthlySalaryaries = employees[i].getSalary();
+        for (Employee e : employees) {
+            if (maxMonthlySalaryaries < e.getSalary()) {
+                maxMonthlySalaryaries = e.getSalary();
             }
         }
         System.out.println("Максимальная зарплата - " + maxMonthlySalaryaries);
@@ -56,8 +54,8 @@ public class WorkingWithData {
 
     public void printAllFullName() {
         String printAllFullName;
-        for (int i = 0; i < Employee.id; i++) {
-            printAllFullName = employees[i].getFulName();
+        for (Employee e : employees) {
+            printAllFullName = e.getFulName();
             System.out.println(printAllFullName);
         }
     }
